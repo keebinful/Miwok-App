@@ -26,7 +26,9 @@ import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
     /**
@@ -105,7 +107,9 @@ public class PhrasesActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mMediaPlayer.release();
+
+        // releaseMediaPlayer method is used instead of just release method to utilize the logic built in: if media player is not null, set to null after releasing.
+        releaseMediaPlayer();
     }
 
     /**
