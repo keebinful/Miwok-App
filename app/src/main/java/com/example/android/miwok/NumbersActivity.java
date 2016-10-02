@@ -29,7 +29,13 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     // Handles playback of sound files
+=======
+    /**
+     * Handles playback of all the sound files
+     */
+>>>>>>> master
     private MediaPlayer mMediaPlayer;
 
     // Handles audio focus when playing sound files
