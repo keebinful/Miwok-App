@@ -17,6 +17,7 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,9 +37,15 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         // Create adapter which keeps track of which page should be displayed
-        CategoryAdapter categoryAdapter = new CategoryAdapter(getSupportFragmentManager());
+        CategoryAdapter categoryAdapter = new CategoryAdapter(getSupportFragmentManager(), this);
 
         // Attach adapter to view pager
         viewPager.setAdapter(categoryAdapter);
+
+        // Tab layout that shows the tabs
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        // Attach tab layout to view pager
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
